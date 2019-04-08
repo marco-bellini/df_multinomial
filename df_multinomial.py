@@ -10,6 +10,8 @@ import numpy as np
 from scipy import stats
 import pandas as pd
 from statsmodels.stats.proportion import proportion_confint
+import pylab as plt
+
 
 def gen_ci_label(columns, prefix):
     new_cols = [prefix + "_%g" % x for x in columns]

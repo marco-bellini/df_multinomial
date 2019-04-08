@@ -160,7 +160,7 @@ def mn_mean_ci(df, groupby_col, feature, alpha=0.05):
     return (mean_ci)
 
 
-def mn_ci_plot(df, ax=None, label_prefix='', **kwargs):
+def mn_ci_plot(df, ax=None, label_prefix='',rot_xticks=True,**kwargs):
     """
     plots the dataframe (output of mn_mean_ci) using a for loop on df.index
 
@@ -191,6 +191,11 @@ def mn_ci_plot(df, ax=None, label_prefix='', **kwargs):
             plt.errorbar(xm, ym, yerr=yerr, label=label, **kwargs);
         else:
             ax.errorbar(xm, ym, yerr=yerr, label=label, **kwargs);
+
+    if rot_xticks:
+        plt.xticks(rotation=90);
+    return ()
+
 
     return ()
 
@@ -238,5 +243,5 @@ def bn_ci_plot(dow_mean_ci, ax=None, rot_xticks=True, **kwargs):
     else:
         ax.errorbar(xm, ym, yerr=yerr, **kwargs);
     if rot_xticks:
-        plt.xticks(rotation=90)
+        plt.xticks(rotation=90);
     return ()

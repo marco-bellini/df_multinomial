@@ -14,6 +14,12 @@ import pylab as plt
 
 
 def gen_ci_label(columns, prefix):
+    '''
+    auxiliary function to add a prefix to list of numbers columns
+    :param columns: list of numbers
+    :param prefix:  string
+    :return:
+    '''
     new_cols = [prefix + "_%g" % x for x in columns]
     return (new_cols)
 
